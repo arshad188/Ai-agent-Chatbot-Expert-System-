@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="manifest.json">
+    <title>AI Paradigms Course</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f0f2f5;
+            padding: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2d3748; font-size: 24px; }
+        h2 { color: #2d3748; font-size: 20px; margin-top: 12px; }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge.expert { background: #4299e1; color: white; }
+        .badge.chatbot { background: #48bb78; color: white; }
+        .badge.agent { background: #ed8936; color: white; }
+        .badge.capstone { background: #9f7aea; color: white; }
+        .btn {
+            display: block;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        .btn:active { transform: scale(0.97); }
+        .tab-container {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 8px 0;
+            margin-bottom: 16px;
+        }
+        .tab {
+            flex: 0 0 auto;
+            padding: 8px 16px;
+            background: white;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .tab.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        .hidden { display: none; }
+        pre {
+            background: #2d3748;
+            color: #f7fafc;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+        .icon { font-size: 28px; margin-right: 8px; }
+        .footer { text-align: center; color: #a0aec0; font-size: 12px; margin-top: 20px; }
+        .swipe-hint {
+            text-align: center;
+            color: #a0aec0;
+            font-size: 12px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🤖 AI Paradigms</h1>
+<p style="color: #718096; margin-bottom: 16px;">From Rules to Autonomy</p>
+
+<!-- Tab Navigation -->
+<div class="tab-container">
+    <div class="tab active" data-tab="home">🏠 Home</div>
+    <div class="tab" data-tab="expert">🏥 Expert</div>
+    <div class="tab" data-tab="chatbot">💬 Chatbot</div>
+    <div class="tab" data-tab="agent">🤖 Agent</div>
+    <div class="tab" data-tab="quizzes">📝 Quiz</div>
+</div>
+
+<!-- HOME TAB -->
+<div id="home" class="card">
+    <h2>Welcome! 👋</h2>
+    <p style="margin: 12px 0; line-height: 1.6; color: #4a5568;">
+        Learn the three fundamental AI paradigms:
+    </p>
+    <div style="display: grid; gap: 10px; margin: 16px 0;">
+        <div style="background: #ebf8ff; padding: 12px; border-radius: 8px; border-left: 4px solid #4299e1;">
+            <strong>🏥 Expert Systems</strong> — Rule-based decision making
+        </div>
+        <div style="background: #f0fff4; padding: 12px; border-radius: 8px; border-left: 4px solid #48bb78;">
+            <strong>💬 Chatbots</strong> — Conversational AI
+        </div>
+        <div style="background: #fffaf0; padding: 12px; border-radius: 8px; border-left: 4px solid #ed8936;">
+            <strong>🤖 AI Agents</strong> — Autonomous action
+        </div>
+    </div>
+    <div style="background: #faf5ff; padding: 16px; border-radius: 8px; border: 2px dashed #9f7aea;">
+        <strong>🎯 Capstone:</strong> Build all three for Restaurant Recommender!
+    </div>
+</div>
+
+<!-- EXPERT TAB -->
+<div id="expert" class="card hidden">
+    <h2>🏥 Expert Systems</h2>
+    <p style="color: #4a5568; margin: 8px 0;">IF-THEN rules that mimic human expertise.</p>
+    
+    <div style="background: #ebf8ff; padding: 12px; border-radius: 8px; margin: 12px 0;">
+        <strong>Key Concepts:</strong>
+        <ul style="margin-top: 8px; padding-left: 20px; line-height: 1.8;">
+            <li>Knowledge Base = All rules</li>
+            <li>Inference Engine = Applies rules</li>
+            <li>Explainable = You can trace decisions</li>
+        </ul>
+    </div>
+    
+    <pre>
+# Simple Expert System
+rules = {
+    ("fever", "cough"): "Flu",
+    ("fever", "rash"): "Measles",
+}
+
+def diagnose(symptoms):
+    for (s1, s2), result in rules.items():
+        if symptoms.get(s1) and symptoms.get(s2):
+            return result
+    return "See a doctor"</pre>
+    
+    <a href="https://colab.research.google.com" class="btn">▶️ Run Code in Colab</a>
+</div>
+
+<!-- CHATBOT TAB -->
+<div id="chatbot" class="card hidden">
+    <h2>💬 Chatbots</h2>
+    <p style="color: #4a5568; margin: 8px 0;">Conversational interfaces that understand language.</p>
+    
+    <div style="background: #f0fff4; padding: 12px; border-radius: 8px; margin: 12px 0;">
+        <strong>Key Concepts:</strong>
+        <ul style="margin-top: 8px; padding-left: 20px; line-height: 1.8;">
+            <li>Intent = What user wants</li>
+            <li>Entity = Specific details</li>
+            <li>Context = Conversation memory</li>
+        </ul>
+    </div>
+    
+    <pre>
+import random
+
+class Chatbot:
+    responses = {
+        "hi": ["Hello!", "Hi!"],
+        "bye": ["Goodbye!"]
+    }
+    
+    def reply(self, msg):
+        for key in self.responses:
+            if key in msg.lower():
+                return random.choice(self.responses[key])
+        return "I don't understand"</pre>
+    
+    <a href="https://colab.research.google.com" class="btn">▶️ Run Code in Colab</a>
+</div>
+
+<!-- AGENT TAB -->
+<div id="agent" class="card hidden">
+    <h2>🤖 AI Agents</h2>
+    <p style="color: #4a5568; margin: 8px 0;">Autonomous systems that achieve goals using tools.</p>
+    
+    <div style="background: #fffaf0; padding: 12px; border-radius: 8px; margin: 12px 0;">
+        <strong>Key Concepts:</strong>
+        <ul style="margin-top: 8px; padding-left: 20px; line-height: 1.8;">
+            <li>Autonomous = Works without guidance</li>
+            <li>Tools = APIs, search, databases</li>
+            <li>Planning = Breaks goals into steps</li>
+        </ul>
+    </div>
+    
+    <pre>
+class Agent:
+    tools = {"search": search_api}
+    
+    def run(self, goal):
+        print(f"Goal: {goal}")
+        result = self.tools["search"](goal)
+        return f"Done: {result}"</pre>
+    
+    <a href="https://colab.research.google.com" class="btn">▶️ Run Code in Colab</a>
+</div>
+
+<!-- QUIZZES TAB -->
+<div id="quizzes" class="card hidden">
+    <h2>📝 Quick Quiz</h2>
+    
+    <div style="margin: 16px 0;">
+        <p><strong>Q1:</strong> What are the 2 main parts of an expert system?</p>
+        <details>
+            <summary style="color: #667eea; cursor: pointer;">Tap for answer</summary>
+            <p style="background: #f0fff4; padding: 12px; border-radius: 8px; margin-top: 8px;">
+                Knowledge Base + Inference Engine
+            </p>
+        </details>
+    </div>
+    
+    <div style="margin: 16px 0;">
+        <p><strong>Q2:</strong> What makes an AI agent "autonomous"?</p>
+        <details>
+            <summary style="color: #667eea; cursor: pointer;">Tap for answer</summary>
+            <p style="background: #f0fff4; padding: 12px; border-radius: 8px; margin-top: 8px;">
+                Works without step-by-step guidance
+            </p>
+        </details>
+    </div>
+    
+    <div style="margin: 16px 0;">
+        <p><strong>Q3:</strong> What's the main weakness of generative chatbots?</p>
+        <details>
+            <summary style="color: #667eea; cursor: pointer;">Tap for answer</summary>
+            <p style="background: #f0fff4; padding: 12px; border-radius: 8px; margin-top: 8px;">
+                Can hallucinate (make things up)
+            </p>
+        </details>
+    </div>
+</div>
+
+<div class="footer">
+    <p>AI Paradigms Course v1.0</p>
+    <p style="font-size: 10px; color: #cbd5e0;">Tap tabs to navigate • Swipe for more</p>
+</div>
+
+<script>
+    // Tab switching
+    const tabs = document.querySelectorAll('.tab');
+    const contents = {
+        home: document.getElementById('home'),
+        expert: document.getElementById('expert'),
+        chatbot: document.getElementById('chatbot'),
+        agent: document.getElementById('agent'),
+        quizzes: document.getElementById('quizzes')
+    };
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show selected content
+            const tabName = this.dataset.tab;
+            Object.keys(contents).forEach(key => {
+                contents[key].classList.add('hidden');
+            });
+            contents[tabName].classList.remove('hidden');
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
