@@ -1,0 +1,10 @@
+I've been teaching AI fundamentals for years, and the #1 confusion? 
+Understanding the difference between chatbots and AI agents.
+
+Here's a complete educational module I built:
+✅ 4 Jupyter notebooks
+✅ 5 quizzes with answer keys
+✅ Docker for zero-setup
+✅ Capstone project
+
+[link] #AI #Education #TechTeaching
