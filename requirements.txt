@@ -1,0 +1,24 @@
+# Core
+jupyter==1.0.0
+numpy==1.24.3
+pandas==2.0.3
+
+# Chatbots
+chatterbot==1.0.4
+chatterbot-corpus==1.2.0
+transformers==4.36.0
+torch==2.1.0
+
+# Agents
+langchain==0.1.0
+openai==1.0.0
+requests==2.31.0
+beautifulsoup4==4.12.2
+
+# UI
+streamlit==1.29.0
+plotly==5.17.0
+
+# Utilities
+python-dotenv==1.0.0
+feedparser==6.0.10
